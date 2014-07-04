@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+    <style type="text/css">
+        .margin_top {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container margin_top">
+
+    <div class="row-fluid">
+        <form action="/search_results" class="form-search span12">
+            <input type="text" class="input-medium search-query span10" name="q">
+            <button type="submit" class="btn">Search books</button>
+        </form>
+    </div>
+
+    {% block content %}
+
+    {% endblock %}
+</div>
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+</body>
+</html>
