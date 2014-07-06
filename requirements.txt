@@ -1,4 +1,5 @@
-Flask
-SQLAlchemy
-WTForms
+Flask==0.10.1
+Jinja2==2.7.3
+SQLAlchemy==0.9.6
+WTForms==2.0.1
 gunicorn==0.17.2

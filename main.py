@@ -1,12 +1,14 @@
 from flask import Flask, render_template, request, redirect, url_for
+from sqlalchemy import or_
+
+from sql import session, engine
+from models import Author, Book
+from forms import AuthorForm, BookForm
+
 
 app = Flask(__name__)
 
-from sql import session, engine
-from sqlalchemy import or_
-
-from models import Book, Author
-from forms import BookForm, AuthorForm
+Book.metadata.create_all(engine)
 
 
 @app.route("/")
@@ -91,6 +93,5 @@ def search_results():
     return render_template('search_results.html', books=books)
 
 
-Book.metadata.create_all(engine)
 if __name__ == "__main__":
     app.run(debug=True, host='127.0.0.1', port=8888, )
