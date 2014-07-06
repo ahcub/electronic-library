@@ -1,4 +1,4 @@
 Flask
 SQLAlchemy
 WTForms
-gunicorn=0.17.2
+gunicorn==0.17.2
